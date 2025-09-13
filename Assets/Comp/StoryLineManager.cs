@@ -25,7 +25,7 @@ public class StoryLineManager : MonoBehaviour
         
     }
 
-    public void HandleMessage(int ID, params int[] pa)
+    public void HandleMessage(int ID)
     {
         if(StoryLine[0].CheckID(ID))
         {

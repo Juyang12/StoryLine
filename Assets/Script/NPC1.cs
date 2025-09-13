@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public delegate void HandleMessage(int ID, params int[] pa);
 
 public class NPC1 : MonoBehaviour
 {
-    public HandleMessage handleMessage;
+    public event System.Action<int> handleMessage;
     [SerializeField] public StoryLineManager storyLineManager;
 
     int ID = 1;
@@ -28,6 +27,7 @@ public class NPC1 : MonoBehaviour
 
     void speaksomething()
     {
-       Debug.Log("Hello, I am NPC1");
+        Debug.Log("Hello, I am NPC1");
+        handleMessage?.Invoke(ID);
     }
 }
