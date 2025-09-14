@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Story
 {
-    
-
     public class Event : MonoBehaviour
     {
-        public EventDataSet[] IDs;
+        public EventDataSet[] IDs;//********需要在编辑器界面赋值
+
+        /// <summary>
+        /// 下面为自动脚本，一般情况不需要调用下面的函数
+        /// </summary>
         private Dictionary<int, bool> IDCheckList;// 用于检查ID是否被触发过
 
-
-        // Start is called before the first frame update
         void Start()
         {
             IDCheckList = new Dictionary<int, bool>();

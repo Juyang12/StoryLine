@@ -19,5 +19,22 @@ public partial class StoryLineManager : MonoBehaviour
         }
     }
 
+    public void HandleMessage(int ID, params int[] pa)
+    {
+        if (StoryLine.Count == 0) return;
+        if (StoryLine[0].CheckID(ID))
+        {
+            StoryLine[0].OnBeenPoped();
+            StoryLine.RemoveAt(0);
+            if (StoryLine.Count == 0) return;//索引检测
+            RequestList = StoryLine[0].OnFront();
+            AnswerRequest();
+        }
+    }
+
+    public StoryLineManager GetInstance()
+    {
+        return this;
+    }
 
 }

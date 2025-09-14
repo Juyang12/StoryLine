@@ -29,32 +29,12 @@ public partial class StoryLineManager : MonoBehaviour
      * **************************\\\\\
      */
     private Story.EventDataSet[] RequestList;// 用于存储当前需要触发的事件ID
-    //private void AnswerRequest(); 用于回答请求
+                                             //private void AnswerRequest(); 用于回答请求
+
+    //public void HandleMessage(int ID, params int[] pa)   参数为ID和一个可变参数列表（非必须使用）；是订阅类的委托函数
+
+    //public StoryLineManager GetInstance()获得故事线manager
     
-    void Start()
-    {
-        
-    }  
-    void Update()
-    {
-        
-    }
-
-    public void HandleMessage(int ID, params int[] pa)
-    {
-        if(StoryLine[0].CheckID(ID))
-        {
-            StoryLine[0].OnBeenPoped();
-            StoryLine.RemoveAt(0);
-            RequestList = StoryLine[0].OnFront();
-            AnswerRequest();
-        }
-    }
-
-    public StoryLineManager GetInstance()
-    {
-        return this;
-    }
 }
 
 

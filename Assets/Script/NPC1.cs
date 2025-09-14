@@ -46,12 +46,8 @@ public partial class NPC1 : MonoBehaviour
 
     void speaksomething()
     {
-<<<<<<< Updated upstream
-       Debug.Log("Hello, I am NPC1");
-=======
         conver(ID);
         handleMessage?.Invoke(ID);
->>>>>>> Stashed changes
     }
 
     public void UpdateID(int id)
