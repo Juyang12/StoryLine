@@ -1,0 +1,10 @@
+{
+  "dialogues": [
+    {
+      "id": 1,
+      "type": "dialogue",
+      "text": "我是B",
+      "imageIndex": 101
+    }
+  ]
+}

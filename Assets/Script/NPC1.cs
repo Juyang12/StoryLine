@@ -23,6 +23,7 @@ public partial class NPC1 : MonoBehaviour
 {
     public HandleMessage handleMessage;
     [SerializeField] public StoryLineManager storyLineManager;
+    public string JsonFileName = "JsonModel1";
 
     public int ID = 1;
     public string Name = "Tom";
@@ -32,13 +33,22 @@ public partial class NPC1 : MonoBehaviour
         handleMessage += storyLineManager.HandleMessage;
         ///////
         ///
-        LoadData("JsonModel1"); // 无.json后缀
+        LoadData(JsonFileName); // 无.json后缀
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
+        {
+            speaksomething();
+        }
+    }
+
+    // Bear新加，当进入触发范围时调用speaksomething
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
         {
             speaksomething();
         }

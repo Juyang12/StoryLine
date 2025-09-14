@@ -1,0 +1,16 @@
+{
+  "dialogues": [
+    {
+      "id": 1,
+      "type": "dialogue",
+      "text": "我是C",
+      "imageIndex": 101
+    },
+    {
+      "id": 2,
+      "type": "dialogue",
+      "text": "想必你已经见过A和B了",
+      "imageIndex": 101
+    }
+  ]
+}
