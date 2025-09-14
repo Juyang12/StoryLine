@@ -5,9 +5,11 @@ using UnityEngine;
 
 namespace Story
 {
+    
+
     public class Event : MonoBehaviour
     {
-        [SerializeField] public int[] IDs;
+        public EventDataSet[] IDs;
         private Dictionary<int, bool> IDCheckList;// 用于检查ID是否被触发过
 
 
@@ -17,19 +19,19 @@ namespace Story
             IDCheckList = new Dictionary<int, bool>();
             foreach (var item in IDs)
             {
-                IDCheckList[item] = false;
+                IDCheckList[item.ID] = false;
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        public EventDataSet[] OnFront()
         {
-
+            return IDs;//ids
         }
 
         public void OnBeenPoped()
         {
-
+            //删除obj
+            Destroy(gameObject, 0.2f);//0.2s延迟删除
         }
 
         private bool AllChecked()
@@ -48,7 +50,7 @@ namespace Story
         {
             foreach (var item in IDs)
             {
-                if (item == id)
+                if (item.ID == id)
                 {
                     IDCheckList[id] = true;
                     return AllChecked();

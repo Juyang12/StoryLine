@@ -1,0 +1,28 @@
+{
+  "dialogues": [
+    {
+      "id": 1,
+      "type": "dialogue",
+      "text": "欢迎来到我们的村庄，旅行者！",
+      "imageIndex": 101
+    },
+    {
+      "id": 2,
+      "type": "dialogue",
+      "text": "这里看起来很平静，最近有什么异常吗？",
+      "imageIndex": 201
+    },
+    {
+      "id": 3,
+      "type": "description",
+      "text": "村长的表情突然变得严肃起来，四周的风似乎也停止了。",
+      "imageIndex": 301
+    },
+    {
+      "id": 4,
+      "type": "plot",
+      "text": "你要怎么做？",
+      "imageIndex": 301
+    }
+  ]
+}

@@ -2,24 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryLineManager : MonoBehaviour
+public partial class StoryLineManager : MonoBehaviour
 {
 
-    [SerializeField]
     public List<Story.Event> StoryLine;
+    [SerializeField] private NPC1[] npcs;//npc表
     /*
      * 声明委托,拷贝到订阅类中使用
      public delegate void HandleMessage(int ID,params int[] pa);
     */
 
 
-    // Start is called before the first frame update
+    /*
+     * StoryLineManager是一个父类，任何使用应该使用子类
+     * 子类应该包含所有与该故事线相关的npc
+     * 假设玩家基类为Player，则：
+     * [SerializeField] private Player[] npcs;
+     * 
+     * 对于Player，至少需要包含一个ID和一个Name
+     * **************************\\\\\
+     * 
+     * public int ID;
+     * Public string Name;
+     * 
+     * 
+     * **************************\\\\\
+     */
+    private Story.EventDataSet[] RequestList;// 用于存储当前需要触发的事件ID
+    //private void AnswerRequest(); 用于回答请求
+    
     void Start()
     {
         
-    }
-
-    // Update is called once per frame
+    }  
     void Update()
     {
         
@@ -31,6 +46,8 @@ public class StoryLineManager : MonoBehaviour
         {
             StoryLine[0].OnBeenPoped();
             StoryLine.RemoveAt(0);
+            RequestList = StoryLine[0].OnFront();
+            AnswerRequest();
         }
     }
 
@@ -39,3 +56,5 @@ public class StoryLineManager : MonoBehaviour
         return this;
     }
 }
+
+
