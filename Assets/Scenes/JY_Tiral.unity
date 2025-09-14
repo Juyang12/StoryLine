@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 11908443}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyLineManager: {fileID: 438515373}
+  JsonFileName: JsonModel1
   ID: 1
   Name: Tom
   database:
@@ -416,10 +417,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoryLine:
+  - {fileID: 1305536086}
   - {fileID: 577734093}
   - {fileID: 1813680039}
   npcs:
   - {fileID: 239661326}
+  - {fileID: 1173299653}
+  - {fileID: 933014444}
+  - {fileID: 473128317}
 --- !u!4 &438515374
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +452,7 @@ GameObject:
   - component: {fileID: 473128316}
   - component: {fileID: 473128315}
   - component: {fileID: 473128314}
-  - component: {fileID: 473128313}
+  - component: {fileID: 473128317}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -455,19 +460,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &473128313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473128312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15d124cc5343b440bad0d84d80d7f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 11908440}
 --- !u!58 &473128314
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -570,6 +562,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &473128317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473128312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f8847436fc8f54cbd3227e69f7af5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyLineManager: {fileID: 438515373}
+  JsonFileName: Cjson
+  ID: 1
+  Name: C
+  database:
+    dialogues: []
 --- !u!1 &577734091
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +638,7 @@ GameObject:
   - component: {fileID: 933014443}
   - component: {fileID: 933014442}
   - component: {fileID: 933014441}
-  - component: {fileID: 933014440}
+  - component: {fileID: 933014444}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -636,19 +646,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &933014440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933014439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15d124cc5343b440bad0d84d80d7f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 11908440}
 --- !u!58 &933014441
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -751,6 +748,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933014444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933014439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f8847436fc8f54cbd3227e69f7af5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyLineManager: {fileID: 438515373}
+  JsonFileName: Bjson
+  ID: 1
+  Name: B
+  database:
+    dialogues: []
 --- !u!1 &999390620
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +869,7 @@ GameObject:
   - component: {fileID: 1173299652}
   - component: {fileID: 1173299651}
   - component: {fileID: 1173299650}
-  - component: {fileID: 1173299649}
+  - component: {fileID: 1173299653}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -862,19 +877,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1173299649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173299648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15d124cc5343b440bad0d84d80d7f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 11908440}
 --- !u!58 &1173299650
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -977,6 +979,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173299653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173299648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f8847436fc8f54cbd3227e69f7af5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyLineManager: {fileID: 438515373}
+  JsonFileName: Ajson
+  ID: 1
+  Name: A
+  database:
+    dialogues: []
+--- !u!1 &1305536084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305536085}
+  - component: {fileID: 1305536086}
+  m_Layer: 0
+  m_Name: Event_TalkedToAAndB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305536085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305536084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1403680078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305536086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305536084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ce0f60e7bcdb04a850400094595e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDs:
+  - ID: 1
+    Name: A
+  - ID: 1
+    Name: B
 --- !u!1 &1403680077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1305536085}
   - {fileID: 577734092}
   - {fileID: 1813680040}
   m_Father: {fileID: 438515374}
