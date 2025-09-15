@@ -22,7 +22,7 @@ public delegate void HandleMessage(int ID, params string[] pa);
 public partial class NPC1 : MonoBehaviour
 {
     public HandleMessage handleMessage;
-    [SerializeField] public StoryLineManager storyLineManager;
+    //[SerializeField] public StoryLineManager storyLineManager;  现在不需要将故事线放进来
     public string JsonFileName = "JsonModel1";
 
     public int ID = 1;
@@ -30,7 +30,7 @@ public partial class NPC1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        handleMessage += storyLineManager.HandleMessage;
+       // handleMessage += storyLineManager.HandleMessage;
         ///////
         ///
         LoadData(JsonFileName); // 无.json后缀
@@ -100,4 +100,5 @@ public partial class NPC1 : MonoBehaviour
             }
         }
     }
+
 }

@@ -5,6 +5,13 @@ using UnityEngine;
 //处理与其他实例交互的逻辑
 public partial class StoryLineManager : MonoBehaviour
 {
+    private void AutoMakeDelegate()
+    {
+        foreach (var npc in npcs)
+        {
+            npc.handleMessage += HandleMessage;
+        }
+    }
     private void AnswerRequest()//用于回答请求
     {
         foreach (var request in RequestList)
