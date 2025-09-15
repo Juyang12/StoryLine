@@ -17,7 +17,7 @@ public class DialogueDatbase
     public List<DialogueDat> dialogues;
 }
 
-public delegate void HandleMessage(int ID, params int[] pa);
+public delegate void HandleMessage(int ID, params string[] pa);
 
 public partial class NPC1 : MonoBehaviour
 {
@@ -57,7 +57,7 @@ public partial class NPC1 : MonoBehaviour
     void speaksomething()
     {
         conver(ID);
-        handleMessage?.Invoke(ID);
+        handleMessage?.Invoke(ID,Name);
     }
 
     public void UpdateID(int id)

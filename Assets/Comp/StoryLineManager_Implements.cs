@@ -19,10 +19,10 @@ public partial class StoryLineManager : MonoBehaviour
         }
     }
 
-    public void HandleMessage(int ID, params int[] pa)
+    public void HandleMessage(int ID, params string[] pa)
     {
         if (StoryLine.Count == 0) return;
-        if (StoryLine[0].CheckID(ID))
+        if (StoryLine[0].CheckID(ID, pa[0]))
         {
             StoryLine[0].OnBeenPoped();
             StoryLine.RemoveAt(0);

@@ -47,7 +47,7 @@ namespace Story
             return true;
         }
 
-        public override bool CheckID(int id)
+        public override bool CheckID(int id, string name)
         {
             foreach (var item in IDs)
             {

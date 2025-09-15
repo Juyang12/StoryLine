@@ -12,14 +12,14 @@ namespace Story
         /// <summary>
         /// 下面为自动脚本，一般情况不需要调用下面的函数
         /// </summary>
-        private Dictionary<int, bool> IDCheckList;// 用于检查ID是否被触发过
+        private Dictionary<EventDataSet, bool> IDCheckList;// 用于检查ID是否被触发过
 
         void Start()
         {
-            IDCheckList = new Dictionary<int, bool>();
+            IDCheckList = new Dictionary<EventDataSet, bool>();
             foreach (var item in IDs)
             {
-                IDCheckList[item.ID] = false;
+                IDCheckList[item] = false; // Use item directly as the key
             }
         }
 
@@ -46,13 +46,13 @@ namespace Story
             return true;
         }
 
-        public virtual bool CheckID(int id)
+        public virtual bool CheckID(int id,string name)
         {
             foreach (var item in IDs)
             {
-                if (item.ID == id)
+                if (item.ID == id && item.Name == name)
                 {
-                    IDCheckList[id] = true;
+                    IDCheckList[item] = true;
                     return AllChecked();
                 }
             }
